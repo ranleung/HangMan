@@ -20,17 +20,34 @@ HangMan.controller("SitesCtrl", [
     $scope.words = [];
     $scope.hintOnes = [];
     $scope.hintTwos = [];
+    $scope.playButton = true;
+    $scope.showHintOne = true;
+    $scope.showHintTwo = true;
+    $scope.showButtonHintOne = true;
+    $scope.showButtonHintTwo = true;
     $scope.addWord = function() {
       $scope.buttonHide = true;
-      return $scope.words.push($scope.secretWord);
+      $scope.words.push($scope.secretWord);
+      $scope.playButton = false;
+      return console.log("Word is:", $scope.words);
     };
     $scope.addHintOne = function() {
       $scope.hintOneHide = true;
-      return $scope.hintOnes.push($scope.hintOne);
+      $scope.hintOnes.push($scope.hintOne);
+      $scope.showButtonHintOne = false;
+      return console.log("Hint One is:", $scope.hintOnes);
     };
-    return $scope.addHintTwo = function() {
+    $scope.addHintTwo = function() {
       $scope.hintTwoHide = true;
-      return $scope.hintTwos.push($scope.hintTwo);
+      $scope.hintTwos.push($scope.hintTwo);
+      $scope.showButtonHintTwo = false;
+      return console.log("Hint Two is:", $scope.hintTwos);
+    };
+    $scope.clickHintOne = function() {
+      return $scope.showHintOne = false;
+    };
+    return $scope.clickHintTwo = function() {
+      return $scope.showHintTwo = false;
     };
   }
 ]);
