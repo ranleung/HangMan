@@ -52,6 +52,9 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 		$scope.showHintTwo = false
 
 
+	$scope.CollapseCtrl = ->
+		$scope.isCollapsed = true
+
 
 
 ]

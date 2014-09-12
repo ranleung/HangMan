@@ -24,7 +24,7 @@ The secret word is: {{secretWord}}
 		      <div class="modal-body text-center">
 		        <form ng-submit="addWord()">
 							<h3>Secret Word: {{secretWord}}</h3>
-							<input type="text" ng-model="secretWord" ng-hide="buttonHide" class="form-control">
+							<input type="text" ng-model="secretWord" ng-hide="buttonHide" class="form-control" autofocus>
 							<button class="btn btn-primary form-control" ng-hide="buttonHide">Save</button>
 						</form>
 						<form ng-submit="addHintOne()">
@@ -46,16 +46,28 @@ The secret word is: {{secretWord}}
 		</div>
 
 		<!-- Hint One -->
-		<button type="button" class="btn btn-info" ng-click="clickHintOne()" ng-hide="showButtonHintOne">Hint 1</button>
-		<div ng-hide="showHintOne">
-			Hint: {{hintOne}}
+		<div ng-controller="CollapseCtrl">
+			<button class="btn btn-info" ng-click="isCollapsed = !isCollapsed" ng-hide="showButtonHintOne">Hint One</button>
+			<div collapse="isCollapsed">
+				<br><div class="well well-sm">{{hintOne}}</div> 
+			</div>
 		</div>
 
 		<!-- Hint Two -->
-		<button type="button" class="btn btn-info" ng-click="clickHintTwo()" ng-hide="showButtonHintTwo">Hint 2</button>
-		<div ng-hide="showHintTwo">
-			Hint: {{hintTwo}}
+		<div ng-controller="CollapseCtrl">
+			<button class="btn btn-info" ng-click="isCollapsed = !isCollapsed" ng-hide="showButtonHintTwo">Hint Two</button>
+			<div collapse="isCollapsed">
+				<br><div class="well well-sm">{{hintTwo}}</div> 
+			</div>
 		</div>
+
+
+
+
+
+
+
+
 
 
 	</div> <!-- left side end -->
@@ -65,47 +77,44 @@ The secret word is: {{secretWord}}
 		<!-- Displaying All Letters -->
 		<div class="col-md-6 text-center">
 			<ul>
-				<li id="letter">A</li>
-				<li id="letter">B</li>
-				<li id="letter">C</li>
-				<li id="letter">D</li>
-				<li id="letter">E</li>
-				<li id="letter">F</li>
+				<li class="letter">A</li>
+				<li class="letter">B</li>
+				<li class="letter">C</li>
+				<li class="letter">D</li>
+				<li class="letter">E</li>
+				<li class="letter">F</li>
 			</ul>
 			<ul>
-				<li id="letter">G</li>
-				<li id="letter">H</li>
-				<li id="letter">I</li>
-				<li id="letter">J</li>
-				<li id="letter">K</li>
-				<li id="letter">L</li>
+				<li class="letter">G</li>
+				<li class="letter">H</li>
+				<li class="letter">I</li>
+				<li class="letter">J</li>
+				<li class="letter">K</li>
+				<li class="letter">L</li>
 			</ul>
 			<ul>
-				<li id="letter">M</li>
-				<li id="letter">N</li>
-				<li id="letter">O</li>
-				<li id="letter">P</li>
-				<li id="letter">Q</li>
-				<li id="letter">R</li>
+				<li class="letter">M</li>
+				<li class="letter">N</li>
+				<li class="letter">O</li>
+				<li class="letter">P</li>
+				<li class="letter">Q</li>
+				<li class="letter">R</li>
 			</ul>
 			<ul>
-				<li id="letter">S</li>
-				<li id="letter">T</li>
-				<li id="letter">U</li>
-				<li id="letter">V</li>
-				<li id="letter">W</li>
-				<li id="letter">X</li>
+				<li class="letter">S</li>
+				<li class="letter">T</li>
+				<li class="letter">U</li>
+				<li class="letter">V</li>
+				<li class="letter">W</li>
+				<li class="letter">X</li>
 			</ul>
 			<ul>
-				<li id="letter">Y</li>
-				<li id="letter">Z</li>				
+				<li class="letter">Y</li>
+				<li class="letter">Z</li>				
 			</ul>
 
 
 		</div>  <!-- right side end -->
-
-
-
 
 
 

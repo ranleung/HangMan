@@ -46,8 +46,11 @@ HangMan.controller("SitesCtrl", [
     $scope.clickHintOne = function() {
       return $scope.showHintOne = false;
     };
-    return $scope.clickHintTwo = function() {
+    $scope.clickHintTwo = function() {
       return $scope.showHintTwo = false;
+    };
+    return $scope.CollapseCtrl = function() {
+      return $scope.isCollapsed = true;
     };
   }
 ]);

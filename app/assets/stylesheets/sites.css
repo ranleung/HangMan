@@ -2,11 +2,15 @@
 	cursor: pointer;
 }
 
-#letter {	
+.letter {	
 	font-size: 40px;
-	color: #00bcd4;
+	height: 100px;
+	width: 80px;
+	color: #3f51b5;
 	padding: 20px;
 	display: inline-block;
 	text-align: center;
 	cursor: pointer;
+	background-color: #e8eaf6;
+	border-radius: 10px;
 }
