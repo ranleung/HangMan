@@ -7,7 +7,7 @@ HangMan.config([
   "$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
       templateUrl: "index.html",
-      Controller: "SitesCtrl"
+      controller: "SitesCtrl"
     }).otherwise({
       redirectTo: "/"
     });
@@ -15,9 +15,16 @@ HangMan.config([
   }
 ]);
 
-HangMan.Controller("SitesCtrl", [
-  "$scope", "$http", function($scope, $http) {
-    return $scope.words = [];
+HangMan.controller("SitesCtrl", [
+  "$scope", function($scope) {
+    $(window).load(function() {
+      $("#myModal").modal("show");
+    });
+    $scope.words = [];
+    return $scope.addWord = function() {
+      $scope.hide = true;
+      return $scope.words.push($scope.secretWord);
+    };
   }
 ]);
 

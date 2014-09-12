@@ -1,11 +1,17 @@
+The secret word is: {{secretWord}}
+
+
+
+
 <h1>Let's Play Hang Man</h1>
-
-
-<h2>Enter Secret Word: </h2>
-<form action="javascript:void(0)"; ng-submit="addWord()">
-	<input type="text" ng-model="secret.word">
+<form ng-submit="addWord()" ng-hide="hide">
+	<h2>Enter Secret Word: </h2>
+	<input type="text" ng-model="secretWord">
 	<button>Let's Play</button>
 </form>
+
+
+
 
 
 

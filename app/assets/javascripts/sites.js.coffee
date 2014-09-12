@@ -6,7 +6,7 @@ HangMan.config ["$routeProvider", "$locationProvider", ($routeProvider, $locatio
 	$routeProvider
 		.when '/',
 			templateUrl: "index.html",
-			Controller: "SitesCtrl"
+			controller: "SitesCtrl"
 	.otherwise
 		redirectTo: "/"
 
@@ -15,17 +15,16 @@ HangMan.config ["$routeProvider", "$locationProvider", ($routeProvider, $locatio
 ]
 
 # Books Controller
-HangMan.Controller "SitesCtrl", ["$scope", "$http", ($scope, $http) ->
+HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
+	$(window).load ->
+	  $("#myModal").modal "show"
+	  return
+
 	$scope.words = []
 
-	
-		
-
-
-
-
-
-
+	$scope.addWord = ->
+		$scope.hide = true
+		$scope.words.push($scope.secretWord)
 
 
 
