@@ -1,5 +1,5 @@
 # Define App and dependencies
-HangMan = angular.module("HangMan", ["ngRoute", "templates"])
+HangMan = angular.module("HangMan", ["ngRoute", "templates","ui.bootstrap"])
 
 # Setup the angular router
 HangMan.config ["$routeProvider", "$locationProvider", ($routeProvider, $locationProvider) ->

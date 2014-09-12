@@ -1,3 +1,7 @@
+.nav, .pagination, .carousel, .panel-title a { 
+	cursor: pointer;
+}
+
 #letter {	
 	font-size: 40px;
 	color: #00bcd4;
