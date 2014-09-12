@@ -17,13 +17,20 @@ HangMan.config([
 
 HangMan.controller("SitesCtrl", [
   "$scope", function($scope) {
-    $(window).load(function() {
-      $("#myModal").modal("show");
-    });
     $scope.words = [];
-    return $scope.addWord = function() {
-      $scope.hide = true;
+    $scope.hintOnes = [];
+    $scope.hintTwos = [];
+    $scope.addWord = function() {
+      $scope.buttonHide = true;
       return $scope.words.push($scope.secretWord);
+    };
+    $scope.addHintOne = function() {
+      $scope.hintOneHide = true;
+      return $scope.hintOnes.push($scope.hintOne);
+    };
+    return $scope.addHintTwo = function() {
+      $scope.hintTwoHide = true;
+      return $scope.hintTwos.push($scope.hintTwo);
     };
   }
 ]);

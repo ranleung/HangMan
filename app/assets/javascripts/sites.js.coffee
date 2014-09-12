@@ -16,15 +16,22 @@ HangMan.config ["$routeProvider", "$locationProvider", ($routeProvider, $locatio
 
 # Books Controller
 HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
-	$(window).load ->
-	  $("#myModal").modal "show"
-	  return
 
 	$scope.words = []
+	$scope.hintOnes = []
+	$scope.hintTwos = []
 
 	$scope.addWord = ->
-		$scope.hide = true
+		$scope.buttonHide = true
 		$scope.words.push($scope.secretWord)
+
+	$scope.addHintOne = ->
+		$scope.hintOneHide = true
+		$scope.hintOnes.push($scope.hintOne)
+
+	$scope.addHintTwo = ->
+		$scope.hintTwoHide = true
+		$scope.hintTwos.push($scope.hintTwo)
 
 
 

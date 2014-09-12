@@ -4,15 +4,45 @@ The secret word is: {{secretWord}}
 
 
 <h1>Let's Play Hang Man</h1>
-<form ng-submit="addWord()" ng-hide="hide">
-	<h2>Enter Secret Word: </h2>
-	<input type="text" ng-model="secretWord">
-	<button>Let's Play</button>
-</form>
 
 
 
+<!-- Button trigger modal -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" ng-hide="buttonHide">
+  Game Set Up
+</button>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title text-center" id="myModalLabel">Player 1</h4>
+      </div>
+      <div class="modal-body text-center">
+        <form ng-submit="addWord()">
+					<h3>Secret Word: {{secretWord}}</h3>
+					<input type="text" ng-model="secretWord" ng-hide="buttonHide" class="form-control">
+					<button class="btn btn-primary form-control" ng-hide="buttonHide">Save</button>
+				</form>
+				<form ng-submit="addHintOne()">
+					<h3>1st Hint: {{hintOne}}</h3>
+					<input type="text" ng-model="hintOne" ng-hide="hintOneHide" class="form-control">
+					<button class="btn btn-primary form-control" ng-hide="hintOneHide">Save</button>
+				</form>
+				<form ng-submit="addHintTwo()">
+					<h3>2nd Hint: {{hintTwo}}</h3>
+					<input type="text" ng-model="hintTwo" ng-hide="hintTwoHide" class="form-control">
+					<button class="btn btn-primary form-control" ng-hide="hintTwoHide">Save</button>
+				</form>
+      </div>
+      <div class="modal-footer">
+      	<button type="button" class="btn btn-success" data-dismiss="modal">Let's Play</button>
+     </div>
+    </div>
+  </div>
+</div>
 
 
 
