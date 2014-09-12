@@ -17,9 +17,12 @@ HangMan.config ["$routeProvider", "$locationProvider", ($routeProvider, $locatio
 # Books Controller
 HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 
+	$scope.alphabets = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+
 	$scope.words = []
 	$scope.hintOnes = []
 	$scope.hintTwos = []
+	$scope.letters = []
 
 	$scope.playButton = true
 	$scope.showHintOne = true
@@ -54,6 +57,14 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 
 	$scope.CollapseCtrl = ->
 		$scope.isCollapsed = true
+
+	$scope.getLetter = (letter)->
+		console.log(letter)
+		$scope.letters.push(letter)
+		console.log($scope.letters)
+		# remove it from the letters array so a user can't click it again
+		
+
 
 
 

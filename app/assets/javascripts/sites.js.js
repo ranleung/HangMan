@@ -17,9 +17,11 @@ HangMan.config([
 
 HangMan.controller("SitesCtrl", [
   "$scope", function($scope) {
+    $scope.alphabets = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     $scope.words = [];
     $scope.hintOnes = [];
     $scope.hintTwos = [];
+    $scope.letters = [];
     $scope.playButton = true;
     $scope.showHintOne = true;
     $scope.showHintTwo = true;
@@ -49,8 +51,13 @@ HangMan.controller("SitesCtrl", [
     $scope.clickHintTwo = function() {
       return $scope.showHintTwo = false;
     };
-    return $scope.CollapseCtrl = function() {
+    $scope.CollapseCtrl = function() {
       return $scope.isCollapsed = true;
+    };
+    return $scope.getLetter = function(letter) {
+      console.log(letter);
+      $scope.letters.push(letter);
+      return console.log($scope.letters);
     };
   }
 ]);

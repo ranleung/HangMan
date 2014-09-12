@@ -1,17 +1,12 @@
-The secret word is: {{secretWord}}
 <div class="container">
 	<h1 class="text-center">Let's Play Hang Man</h1>
-
-<hr>
-
-	<div class="row">
-
-		<div class="col-md-6">
-			
+		
 		<!-- Button trigger modal -->
-		<button class="btn btn-primary" data-toggle="modal" data-target="#myModal" ng-hide="buttonHide">
-		  Game Set Up
-		</button>
+		<div class="text-center">
+			<button class="btn btn-primary" data-toggle="modal" data-target="#myModal" ng-hide="buttonHide">
+			  Game Set Up
+			</button>
+		</div>
 
 		<!-- Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -45,6 +40,14 @@ The secret word is: {{secretWord}}
 		  </div>
 		</div>
 
+
+
+<hr>
+
+	<div class="row">
+
+		<div class="col-md-6">
+
 		<!-- Hint One -->
 		<div ng-controller="CollapseCtrl">
 			<button class="btn btn-info" ng-click="isCollapsed = !isCollapsed" ng-hide="showButtonHintOne">Hint One</button>
@@ -61,57 +64,26 @@ The secret word is: {{secretWord}}
 			</div>
 		</div>
 
+		Letters : {{letters}}
 
-
-
-
-
-
+		<div ng-repeat="letter in letters">
+			{{letter}}
+		</div>
 
 
 
 	</div> <!-- left side end -->
 
 
-
 		<!-- Displaying All Letters -->
 		<div class="col-md-6 text-center">
-			<ul>
-				<li class="letter">A</li>
-				<li class="letter">B</li>
-				<li class="letter">C</li>
-				<li class="letter">D</li>
-				<li class="letter">E</li>
-				<li class="letter">F</li>
-			</ul>
-			<ul>
-				<li class="letter">G</li>
-				<li class="letter">H</li>
-				<li class="letter">I</li>
-				<li class="letter">J</li>
-				<li class="letter">K</li>
-				<li class="letter">L</li>
-			</ul>
-			<ul>
-				<li class="letter">M</li>
-				<li class="letter">N</li>
-				<li class="letter">O</li>
-				<li class="letter">P</li>
-				<li class="letter">Q</li>
-				<li class="letter">R</li>
-			</ul>
-			<ul>
-				<li class="letter">S</li>
-				<li class="letter">T</li>
-				<li class="letter">U</li>
-				<li class="letter">V</li>
-				<li class="letter">W</li>
-				<li class="letter">X</li>
-			</ul>
-			<ul>
-				<li class="letter">Y</li>
-				<li class="letter">Z</li>				
-			</ul>
+
+			<div ng-repeat="alphabet in alphabets">
+				<ul>
+					<button class="letter" ng-click="getLetter(alphabet)">{{alphabet}}</button>
+				</ul>
+			</div>
+
 
 
 		</div>  <!-- right side end -->
@@ -123,3 +95,10 @@ The secret word is: {{secretWord}}
 </div>  <!-- container ends -->
 
 
+
+<!-- by $index -->
+<!-- for displaying letters -->
+
+<!-- modal upfront -->
+<!-- z index = 2; -->
+<!-- position: abosolute; -->
