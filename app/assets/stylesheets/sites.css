@@ -10,8 +10,8 @@
 .letter {	
 	font-size: 40px;
 	font-weight: bold;
-	height: 85px;
-	width: 85px;
+	height: 80px;
+	width: 80px;
 	color: #3f51b5;
 	padding: 0px;
 	display: inline-block;
@@ -26,5 +26,8 @@
 	border-bottom: 1px solid;
 }
 
+#question{
+	text-decoration: underline;
+}
 
 

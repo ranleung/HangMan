@@ -18,6 +18,7 @@ HangMan.config([
 HangMan.controller("SitesCtrl", [
   "$scope", function($scope) {
     $scope.alphabets = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    $scope.questions = [];
     $scope.secretWords = [];
     $scope.hintOnes = [];
     $scope.hintTwos = [];
@@ -27,6 +28,12 @@ HangMan.controller("SitesCtrl", [
     $scope.showHintTwo = true;
     $scope.showButtonHintOne = true;
     $scope.showButtonHintTwo = true;
+    $scope.initalQuestion = function() {
+      $scope.questionHide = true;
+      $scope.questions.push($scope.question);
+      $scope.hideQuestion = true;
+      return console.log("Brief Description", $scope.questions);
+    };
     $scope.addWord = function() {
       $scope.buttonHide = true;
       $scope.secretWords.push($scope.secretWord);

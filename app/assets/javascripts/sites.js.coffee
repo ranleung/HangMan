@@ -19,6 +19,7 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 
 	$scope.alphabets = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
+	$scope.questions = []
 	$scope.secretWords = []
 	$scope.hintOnes = []
 	$scope.hintTwos = []
@@ -29,6 +30,12 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 	$scope.showHintTwo = true
 	$scope.showButtonHintOne = true
 	$scope.showButtonHintTwo = true
+
+	$scope.initalQuestion = ->
+		$scope.questionHide = true
+		$scope.questions.push($scope.question)
+		$scope.hideQuestion = true
+		console.log("Brief Description", $scope.questions)
 
 	$scope.addWord = ->
 		$scope.buttonHide = true
