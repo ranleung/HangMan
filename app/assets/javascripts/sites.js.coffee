@@ -19,7 +19,7 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 
 	$scope.alphabets = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
-	$scope.words = []
+	$scope.secretWords = []
 	$scope.hintOnes = []
 	$scope.hintTwos = []
 	$scope.letters = []
@@ -32,9 +32,9 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 
 	$scope.addWord = ->
 		$scope.buttonHide = true
-		$scope.words.push($scope.secretWord)
+		$scope.secretWords.push($scope.secretWord)
 		$scope.playButton = false
-		console.log("Word is:", $scope.words)
+		console.log("Word is:", $scope.secretWords)
 
 	$scope.addHintOne = ->
 		$scope.hintOneHide = true
@@ -53,7 +53,6 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 
 	$scope.clickHintTwo = ->
 		$scope.showHintTwo = false
-
 
 	$scope.CollapseCtrl = ->
 		$scope.isCollapsed = true

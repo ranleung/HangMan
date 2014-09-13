@@ -9,14 +9,22 @@
 
 .letter {	
 	font-size: 40px;
-	height: 100px;
-	width: 80px;
+	font-weight: bold;
+	height: 85px;
+	width: 85px;
 	color: #3f51b5;
-	padding: 20px;
+	padding: 0px;
 	display: inline-block;
 	text-align: center;
 	cursor: pointer;
 	background-color: #e8eaf6;
-	border-radius: 10px;
+	border-radius: 50px;
 	box-sizing: border-box;
 }
+
+.answer{
+	border-bottom: 1px solid;
+}
+
+
+
