@@ -7,6 +7,28 @@
 			  Game Set Up
 			</button>
 		</div>
+		<!-- Hint One -->
+		<div class="row text-center">
+			<div class="col-md-6">
+				<div ng-controller="CollapseCtrl">
+					<button class="btn btn-info" ng-click="isCollapsed = !isCollapsed" ng-hide="showButtonHintOne">Hint One</button>
+					<div collapse="isCollapsed">
+						<br><div class="well well-sm">{{hintOne}}</div> 
+					</div>
+				</div>
+			</div>
+
+			<!-- Hint Two -->
+			<div class="col-md-6">
+				<div ng-controller="CollapseCtrl">
+					<button class="btn btn-info" ng-click="isCollapsed = !isCollapsed" ng-hide="showButtonHintTwo">Hint Two</button>
+					<div collapse="isCollapsed">
+						<br><div class="well well-sm">{{hintTwo}}</div> 
+					</div>
+				</div>
+			</div>
+
+		</div>  <!-- row ends -->
 
 		<!-- Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -48,27 +70,25 @@
 
 		<div class="col-md-6">
 
-		<!-- Hint One -->
-		<div ng-controller="CollapseCtrl">
-			<button class="btn btn-info" ng-click="isCollapsed = !isCollapsed" ng-hide="showButtonHintOne">Hint One</button>
-			<div collapse="isCollapsed">
-				<br><div class="well well-sm">{{hintOne}}</div> 
-			</div>
-		</div>
 
-		<!-- Hint Two -->
-		<div ng-controller="CollapseCtrl">
-			<button class="btn btn-info" ng-click="isCollapsed = !isCollapsed" ng-hide="showButtonHintTwo">Hint Two</button>
-			<div collapse="isCollapsed">
-				<br><div class="well well-sm">{{hintTwo}}</div> 
-			</div>
-		</div>
+		<!-- Letters : {{letters}} -->
 
-		Letters : {{letters}}
+		<svg width="500" height="550">
 
-		<div ng-repeat="letter in letters">
-			{{letter}}
-		</div>
+			<!-- Hanger -->
+			<polyline points = "400,
+											500 100,
+											500 150,
+											500 150,
+											100 320,
+											100 320,
+											150"
+											style="fill:none;stroke:black;stroke-width:15" />
+
+
+
+
+		</svg>
 
 
 
@@ -81,6 +101,7 @@
 			<div class="alphabets" ng-repeat="alphabet in alphabets">				
 				<button class="letter" ng-click="getLetter(alphabet)" ng-hide="showLetter">{{alphabet}}</button>				
 			</div>
+
 
 
 
