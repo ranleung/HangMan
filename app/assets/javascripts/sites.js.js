@@ -57,7 +57,8 @@ HangMan.controller("SitesCtrl", [
     return $scope.getLetter = function(letter) {
       console.log(letter);
       $scope.letters.push(letter);
-      return console.log($scope.letters);
+      console.log($scope.letters);
+      return this.showLetter = true;
     };
   }
 ]);

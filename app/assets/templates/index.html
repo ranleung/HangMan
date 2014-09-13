@@ -78,10 +78,8 @@
 		<!-- Displaying All Letters -->
 		<div class="col-md-6 text-center">
 
-			<div ng-repeat="alphabet in alphabets">
-				<ul>
-					<button class="letter" ng-click="getLetter(alphabet)">{{alphabet}}</button>
-				</ul>
+			<div class="alphabets" ng-repeat="alphabet in alphabets">				
+				<button class="letter" ng-click="getLetter(alphabet)" ng-hide="showLetter">{{alphabet}}</button>				
 			</div>
 
 
@@ -102,3 +100,6 @@
 <!-- modal upfront -->
 <!-- z index = 2; -->
 <!-- position: abosolute; -->
+
+<!-- if x in y
+console.log("test") -->

@@ -2,6 +2,10 @@
 	cursor: pointer;
 }
 
+.alphabets{
+	display: inline-block;
+	margin: 5px;
+}
 
 .letter {	
 	font-size: 40px;
@@ -14,4 +18,5 @@
 	cursor: pointer;
 	background-color: #e8eaf6;
 	border-radius: 10px;
+	box-sizing: border-box;
 }

@@ -63,7 +63,7 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 		$scope.letters.push(letter)
 		console.log($scope.letters)
 		# remove it from the letters array so a user can't click it again
-		
+		this.showLetter = true
 
 
 
