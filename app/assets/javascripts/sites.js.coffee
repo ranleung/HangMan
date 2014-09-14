@@ -83,6 +83,7 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 				i++
 		if !isLetter && !isNotLetter
 			console.log "WILL DELETE 1 BODY PART"
+			# $scope.body = true
 		$scope.letters = []
 
 ]
