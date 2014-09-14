@@ -46,7 +46,7 @@
 						</form>
 		        <form ng-submit="addWord()">
 							<h3>Secret Word: {{secretWord}}</h3>
-							<input type="text" ng-model="secretWord" ng-hide="buttonHide" class="form-control">
+							<input type="text" ng-model="secretWord" ng-hide="buttonHide" class="form-control" required>
 							<button class="btn btn-primary form-control" ng-hide="buttonHide">Save</button>
 						</form>
 						<form ng-submit="addHintOne()">

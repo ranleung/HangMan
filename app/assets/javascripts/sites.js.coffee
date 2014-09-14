@@ -24,6 +24,7 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 	$scope.hintOnes = []
 	$scope.hintTwos = []
 	$scope.letters = []
+	bodyCount = 0
 
 	$scope.playButton = true
 	$scope.showHintOne = true
@@ -83,7 +84,8 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 				i++
 		if !isLetter && !isNotLetter
 			console.log "WILL DELETE 1 BODY PART"
-			# $scope.body = true
+			bodyCount++
+			console.log("Body Count:", bodyCount)
 		$scope.letters = []
 
 ]

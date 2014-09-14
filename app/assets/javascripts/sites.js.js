@@ -17,12 +17,14 @@ HangMan.config([
 
 HangMan.controller("SitesCtrl", [
   "$scope", function($scope) {
+    var bodyCount;
     $scope.alphabets = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     $scope.questions = [];
     $scope.secretWords = [];
     $scope.hintOnes = [];
     $scope.hintTwos = [];
     $scope.letters = [];
+    bodyCount = 0;
     $scope.playButton = true;
     $scope.showHintOne = true;
     $scope.showHintTwo = true;
@@ -82,6 +84,8 @@ HangMan.controller("SitesCtrl", [
       }
       if (!isLetter && !isNotLetter) {
         console.log("WILL DELETE 1 BODY PART");
+        bodyCount++;
+        console.log("Body Count:", bodyCount);
       }
       return $scope.letters = [];
     };
