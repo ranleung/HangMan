@@ -86,6 +86,25 @@ HangMan.controller("SitesCtrl", [
         console.log("WILL DELETE 1 BODY PART");
         bodyCount++;
         console.log("Body Count:", bodyCount);
+        if (bodyCount === 1) {
+          $scope.head = true;
+        }
+        if (bodyCount === 2) {
+          $scope.body = true;
+        }
+        if (bodyCount === 3) {
+          $scope.leftArm = true;
+        }
+        if (bodyCount === 4) {
+          $scope.rightArm = true;
+        }
+        if (bodyCount === 5) {
+          $scope.leftLeg = true;
+        }
+        if (bodyCount === 6) {
+          $scope.rightLeg = true;
+          console.log("You Lost");
+        }
       }
       return $scope.letters = [];
     };

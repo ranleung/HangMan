@@ -86,8 +86,15 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 			console.log "WILL DELETE 1 BODY PART"
 			bodyCount++
 			console.log("Body Count:", bodyCount)
+			$scope.head = true if bodyCount is 1
+			$scope.body = true if bodyCount is 2
+			$scope.leftArm = true if bodyCount is 3
+			$scope.rightArm = true if bodyCount is 4
+			$scope.leftLeg = true if bodyCount is 5
+			if bodyCount is 6
+				$scope.rightLeg = true
+				console.log("You Lost")
 		$scope.letters = []
-
 ]
 
 
