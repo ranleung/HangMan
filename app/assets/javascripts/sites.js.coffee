@@ -22,7 +22,7 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 	$scope.questions = []
 	$scope.secretWords = []
 	$scope.displayLetters = ""
-	$scope.correctGuess = ""
+	$scope.correctGuesses = ""
 	$scope.hintOnes = []
 	$scope.hintTwos = []
 	$scope.letters = []
@@ -84,9 +84,9 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 		while i < joinSecretWord.length
 			if joinSecretWord[i] is $scope.letters.join("")
 				console.log "You successfully guess this letter:", joinSecretWord[i]
-				$scope.correctGuess = joinSecretWord[i]
-				console.log($scope.correctGuess)
-				$scope.correct_answer = true
+				$scope.correctGuesses += joinSecretWord[i]
+				console.log("correctGuesses:",$scope.correctGuesses)
+				# $scope.correct_answer = true
 				isLetter = true
 				correctCount++
 				i++

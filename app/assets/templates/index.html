@@ -71,11 +71,11 @@
 		<div class="col-md-6">  
 
 		<div class="text-center">
-			<div class="underline" ng-repeat="i in displayLetters track by $index">
-				<div class="answer"> 
-				</div>
-				<div ng-show="correct_answer">
+			<div class="underline" ng-repeat="letter in displayLetters track by $index">
+				<div ng-repeat="correctGuess in correctGuesses" ng-if="correctGuess === letter">
 					{{correctGuess}}
+				</div>
+				<div class="answer"> 
 				</div>
 			</div>
 		</div>
