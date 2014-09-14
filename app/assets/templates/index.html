@@ -1,12 +1,6 @@
 <div class="container">
 	<h1 class="text-center">Let's Play Hang Man</h1>
 		
-		<!-- Button trigger modal -->
-		<div class="text-center">
-			<button class="btn btn-primary" data-toggle="modal" data-target="#myModal" ng-hide="buttonHide">
-			  Game Set Up
-			</button>
-		</div>
 		<!-- Hint One -->
 		<div class="row text-center">
 			<div class="col-md-6">
@@ -40,24 +34,24 @@
 		      </div>
 		      <div class="modal-body text-center">
 		      	<form ng-submit="initalQuestion()">
-							<h3>Brief Description: {{question}}</h3>
-							<input type="text" ng-model="question" ng-hide="questionHide" class="form-control" autofocus>
-							<button class="btn btn-primary form-control" ng-hide="questionHide">Save</button>
+							<h5>Brief Description: {{question}}</h5>
+							<input type="text" ng-model="question" ng-hide="questionHide" class="form-control text-center" autofocus>
+							<button class="btn-xs btn-primary form-control" ng-hide="questionHide">Save</button>
 						</form>
 		        <form ng-submit="addWord()">
-							<h3>Secret Word: {{secretWord}}</h3>
-							<input type="text" ng-model="secretWord" ng-hide="buttonHide" class="form-control" required>
-							<button class="btn btn-primary form-control" ng-hide="buttonHide">Save</button>
+							<h5>Secret Word: {{secretWord}}</h5>
+							<input type="text" ng-model="secretWord" ng-hide="buttonHide" class="form-control text-center" required>
+							<button class="btn-xs btn-primary form-control" ng-hide="buttonHide">Save</button>
 						</form>
 						<form ng-submit="addHintOne()">
-							<h3>1st Hint: {{hintOne}}</h3>
-							<input type="text" ng-model="hintOne" ng-hide="hintOneHide" class="form-control">
-							<button class="btn btn-primary form-control" ng-hide="hintOneHide">Save</button>
+							<h5>1st Hint: {{hintOne}}</h5>
+							<input type="text" ng-model="hintOne" ng-hide="hintOneHide" class="form-control text-center">
+							<button class="btn-xs btn-primary form-control" ng-hide="hintOneHide">Save</button>
 						</form>
 						<form ng-submit="addHintTwo()">
-							<h3>2nd Hint: {{hintTwo}}</h3>
-							<input type="text" ng-model="hintTwo" ng-hide="hintTwoHide" class="form-control">
-							<button class="btn btn-primary form-control" ng-hide="hintTwoHide">Save</button>
+							<h5>2nd Hint: {{hintTwo}}</h5>
+							<input type="text" ng-model="hintTwo" ng-hide="hintTwoHide" class="form-control text-center">
+							<button class="btn-xs btn-primary form-control" ng-hide="hintTwoHide">Save</button>
 						</form>
 		      </div>
 		      <div class="modal-footer">
@@ -115,11 +109,22 @@
 
 		<!-- Displaying All Letters -->
 		<div class="col-md-6 text-center">
+
+
 			<h2 id="question" ng-show="hideQuestion">Question: {{question}}</h2>
 			<div class="alphabets" ng-repeat="alphabet in alphabets">				
 				<button class="letter" ng-click="getLetter(alphabet)" ng-hide="showLetter">{{alphabet}}</button>				
 			</div>
 
+			<!-- Image to show game over -->
+			<h2 ng-show="lost"><img src="../images/gameover.jpg" alt="game over"></h2>
+
+				<!-- Button trigger modal -->
+			<br><br><br><br><br><br><br><br><br><br><br><div class="text-center">
+				<button class="btn-lg btn-primary" data-toggle="modal" data-target="#myModal" ng-hide="buttonHide">
+				  Game Set Up
+				</button>
+			</div>
 
 
 

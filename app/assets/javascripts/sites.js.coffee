@@ -26,6 +26,7 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 	$scope.letters = []
 	bodyCount = 0
 
+	$scope.showLetter = true
 	$scope.playButton = true
 	$scope.showHintOne = true
 	$scope.showHintTwo = true
@@ -43,6 +44,7 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 		$scope.secretWords.push($scope.secretWord)
 		$scope.playButton = false
 		console.log("Word is:", $scope.secretWords)
+		$scope.showLetter = false
 
 	$scope.addHintOne = ->
 		$scope.hintOneHide = true
@@ -93,6 +95,8 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 			$scope.leftLeg = true if bodyCount is 5
 			if bodyCount is 6
 				$scope.rightLeg = true
+				$scope.showLetter = true
+				$scope.lost = true
 				console.log("You Lost")
 		$scope.letters = []
 ]
