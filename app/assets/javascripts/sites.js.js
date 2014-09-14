@@ -62,18 +62,26 @@ HangMan.controller("SitesCtrl", [
       return $scope.isCollapsed = true;
     };
     return $scope.getLetter = function(letter) {
-      var checkWord, i, joinSecretWord;
-      console.log("Pressed this letter", letter);
+      var checkWord, i, isLetter, isNotLetter, joinSecretWord;
+      console.log("Pressed this letter:", letter);
       $scope.letters.push(letter);
       this.showLetter = true;
       checkWord = $scope.secretWords.join("");
       joinSecretWord = $scope.secretWords.join("");
       i = 0;
+      isLetter = false;
       while (i < joinSecretWord.length) {
         if (joinSecretWord[i] === $scope.letters.join("")) {
           console.log("You successfully guess this letter:", joinSecretWord[i]);
+          isLetter = true;
+          i++;
+        } else {
+          isNotLetter = false;
+          i++;
         }
-        i++;
+      }
+      if (!isLetter && !isNotLetter) {
+        console.log("WILL DELETE 1 BODY PART");
       }
       return $scope.letters = [];
     };
