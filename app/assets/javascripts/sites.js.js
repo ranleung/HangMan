@@ -17,15 +17,17 @@ HangMan.config([
 
 HangMan.controller("SitesCtrl", [
   "$scope", function($scope) {
-    var bodyCount;
+    var bodyCount, correctCount;
     $scope.alphabets = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     $scope.questions = [];
     $scope.secretWords = [];
     $scope.displayLetters = "";
+    $scope.correctGuess = "";
     $scope.hintOnes = [];
     $scope.hintTwos = [];
     $scope.letters = [];
     bodyCount = 0;
+    correctCount = 0;
     $scope.showLetter = true;
     $scope.playButton = true;
     $scope.showHintOne = true;
@@ -79,9 +81,16 @@ HangMan.controller("SitesCtrl", [
       while (i < joinSecretWord.length) {
         if (joinSecretWord[i] === $scope.letters.join("")) {
           console.log("You successfully guess this letter:", joinSecretWord[i]);
+          $scope.correctGuess = joinSecretWord[i];
+          console.log($scope.correctGuess);
           $scope.correct_answer = true;
           isLetter = true;
+          correctCount++;
           i++;
+          if (correctCount === joinSecretWord.length) {
+            $scope.showLetter = true;
+            $scope.won = true;
+          }
         } else {
           isNotLetter = false;
           i++;

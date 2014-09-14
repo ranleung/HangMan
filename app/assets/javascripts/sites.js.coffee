@@ -22,10 +22,12 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 	$scope.questions = []
 	$scope.secretWords = []
 	$scope.displayLetters = ""
+	$scope.correctGuess = ""
 	$scope.hintOnes = []
 	$scope.hintTwos = []
 	$scope.letters = []
 	bodyCount = 0
+	correctCount = 0
 
 	$scope.showLetter = true
 	$scope.playButton = true
@@ -78,15 +80,25 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 		joinSecretWord = $scope.secretWords.join("")
 		i = 0
 		isLetter = false
+		# Check to see if the word is successfully guess
 		while i < joinSecretWord.length
 			if joinSecretWord[i] is $scope.letters.join("")
 				console.log "You successfully guess this letter:", joinSecretWord[i]
+				$scope.correctGuess = joinSecretWord[i]
+				console.log($scope.correctGuess)
 				$scope.correct_answer = true
 				isLetter = true
+				correctCount++
 				i++
+				# Check to see if there is a winner
+				if correctCount is joinSecretWord.length
+					$scope.showLetter = true
+					$scope.won = true
+			# if the letter is not guessed correctly
 			else
 				isNotLetter = false
 				i++
+		# if not guessed properly, delete a body part
 		if !isLetter && !isNotLetter
 			console.log "WILL DELETE 1 BODY PART"
 			bodyCount++

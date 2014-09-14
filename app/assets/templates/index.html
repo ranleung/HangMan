@@ -72,7 +72,11 @@
 
 		<div class="text-center">
 			<div class="underline" ng-repeat="i in displayLetters track by $index">
-				<p class="answer"> </p>
+				<div class="answer"> 
+				</div>
+				<div ng-show="correct_answer">
+					{{correctGuess}}
+				</div>
 			</div>
 		</div>
 
@@ -118,10 +122,13 @@
 				<button class="letter" ng-click="getLetter(alphabet)" ng-hide="showLetter">{{alphabet}}</button>				
 			</div>
 
-			<!-- Image to show game over -->
+			<!-- Image to show lost, game over -->
 			<h2 ng-show="lost"><img src="../images/gameover.jpg" alt="game over"></h2>
 
-				<!-- Button trigger modal -->
+			<!-- Image to show when winner, game over -->
+			<h2 ng-show="won">You've won!</h2>
+
+			<!-- Button trigger modal -->
 			<br><br><br><br><br><br><br><br><br><br><br><div class="text-center">
 				<button class="btn-lg btn-primary" data-toggle="modal" data-target="#myModal" ng-hide="buttonHide">
 				  Game Set Up
