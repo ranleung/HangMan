@@ -79,7 +79,7 @@ HangMan.controller("SitesCtrl", [
       while (i < joinSecretWord.length) {
         if (joinSecretWord[i] === $scope.letters.join("")) {
           console.log("You successfully guess this letter:", joinSecretWord[i]);
-          $scope.correct_answer = false;
+          $scope.correct_answer = true;
           isLetter = true;
           i++;
         } else {

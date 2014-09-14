@@ -81,7 +81,7 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 		while i < joinSecretWord.length
 			if joinSecretWord[i] is $scope.letters.join("")
 				console.log "You successfully guess this letter:", joinSecretWord[i]
-				$scope.correct_answer = false
+				$scope.correct_answer = true
 				isLetter = true
 				i++
 			else
