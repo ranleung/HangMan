@@ -21,6 +21,7 @@ HangMan.controller("SitesCtrl", [
     $scope.alphabets = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     $scope.questions = [];
     $scope.secretWords = [];
+    $scope.displayLetters = "";
     $scope.hintOnes = [];
     $scope.hintTwos = [];
     $scope.letters = [];
@@ -40,6 +41,7 @@ HangMan.controller("SitesCtrl", [
     $scope.addWord = function() {
       $scope.buttonHide = true;
       $scope.secretWords.push($scope.secretWord);
+      $scope.displayLetters = $scope.secretWords.join("");
       $scope.playButton = false;
       console.log("Word is:", $scope.secretWords);
       return $scope.showLetter = false;
@@ -77,6 +79,7 @@ HangMan.controller("SitesCtrl", [
       while (i < joinSecretWord.length) {
         if (joinSecretWord[i] === $scope.letters.join("")) {
           console.log("You successfully guess this letter:", joinSecretWord[i]);
+          $scope.correct_answer = false;
           isLetter = true;
           i++;
         } else {

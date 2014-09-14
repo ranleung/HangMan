@@ -22,8 +22,15 @@
 	box-sizing: border-box;
 }
 
+.underline {
+	display: inline-block;
+	width: 80px
+}
+
 .answer{
-	border-bottom: 1px solid;
+	border-bottom: 2px solid black;
+	padding: .8em 1.4em;
+	display: inline-block;
 }
 
 #question{
@@ -33,5 +40,8 @@
 #hanger{
 
 }
+
+
+
 
 
