@@ -76,11 +76,11 @@
 		<div class="col-md-6">
 
 
-		<h3 class="answer text-center ng-repeat="secretWord in secretWords"">
+<!-- 		<h3 class="answer text-center ng-repeat="secretWord in secretWords"">
 			{{secretWord}}
-		</h3>
+		</h3> -->
 
-		<svg width="500" height="550">
+		<svg width="400" height="550" id="hanger">
 
 			<!-- Hanger -->
 			<polyline points = "400,
@@ -91,18 +91,19 @@
 											100 320,
 											150"
 											style="fill:none;stroke:black;stroke-width:15" />
+
 			<!-- body -->
-			<line style="stroke:black;" x1="320" y1="190" x2="320" y2="360" />
+			<line style="stroke:black;" x1="320" y1="190" x2="320" y2="360" ng-hide="body" />
 			<!-- left arm -->
-			<line style="stroke:black;" x1="320" y1="260" x2="250" y2="230" />
+			<line style="stroke:black;" x1="320" y1="260" x2="250" y2="230" ng-hide="leftArm" />
 			<!-- right arm -->
-			<line style="stroke:black;" x1="320" y1="260" x2="390" y2="230" />
+			<line style="stroke:black;" x1="320" y1="260" x2="390" y2="230" ng-hide="rightArm" />
 			<!-- left leg -->
-			<line style="stroke:black;" x1="320" y1="360" x2="250" y2="450" />
+			<line style="stroke:black;" x1="320" y1="360" x2="250" y2="450" ng-hide="leftLeg" />
 			<!-- right leg -->
-			<line style="stroke:black;" x1="320" y1="360" x2="390" y2="450" />
+			<line style="stroke:black;" x1="320" y1="360" x2="390" y2="450" ng-hide="rightLeg" />
 			<!-- head -->
-			<circle style="stroke:black;" cx="320" cy="190" r="40" fill="white" />
+			<circle style="stroke:black;" cx="320" cy="190" r="40" fill="white" ng-hide="head" />
 
 
 		</svg>
@@ -139,5 +140,5 @@
 <!-- z index = 2; -->
 <!-- position: abosolute; -->
 
-<!-- if x in y
+<!-- if x of y
 console.log("test") -->

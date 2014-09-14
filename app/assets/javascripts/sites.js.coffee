@@ -65,14 +65,15 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 		$scope.isCollapsed = true
 
 	$scope.getLetter = (letter)->
-		console.log(letter)
+		# console.log(letter)
 		$scope.letters.push(letter)
-		console.log($scope.letters)
 		# remove it from the letters array so a user can't click it again
 		this.showLetter = true
-
-
-
+		i = 0
+		while i < $scope.secretWords.length
+			console.log "You successfully guess this letter", secretWords[i] if $scope.secretWords[i] is $scope.letters.join("")
+			i++
+		$scope.letters = []
 
 ]
 
