@@ -43,11 +43,14 @@
 }
 
 #gameOver{
-	width:100%;
-	height: 200px;
+	width:100px;
+	height: 600px;
 }
 
-
+#youWon{
+	width: 100%;
+	height: 500px;
+}
 
 
 
