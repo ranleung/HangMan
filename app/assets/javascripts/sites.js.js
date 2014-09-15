@@ -34,6 +34,7 @@ HangMan.controller("SitesCtrl", [
     $scope.showHintTwo = true;
     $scope.showButtonHintOne = true;
     $scope.showButtonHintTwo = true;
+    $scope.reset = true;
     $scope.initalQuestion = function() {
       $scope.questionHide = true;
       $scope.questions.push($scope.question);
@@ -46,7 +47,8 @@ HangMan.controller("SitesCtrl", [
       $scope.displayLetters = $scope.secretWords.join("");
       $scope.playButton = false;
       console.log("Word is:", $scope.secretWords);
-      return $scope.showLetter = false;
+      $scope.showLetter = false;
+      return $scope.reset = false;
     };
     $scope.addHintOne = function() {
       $scope.hintOneHide = true;
@@ -118,6 +120,7 @@ HangMan.controller("SitesCtrl", [
           $scope.rightLeg = true;
           $scope.showLetter = true;
           $scope.lost = true;
+          $scope.reset = false;
           console.log("You Lost");
         }
       }

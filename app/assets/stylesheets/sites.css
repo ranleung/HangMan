@@ -33,12 +33,13 @@
 	display: inline-block;
 }
 
-#question{
-	
+#startButton{
+	height:500px;
+	width: 100%;
 }
 
-#hanger{
-
+#resetButton{
+	float: right;
 }
 
 

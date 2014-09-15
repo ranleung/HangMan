@@ -72,13 +72,15 @@
 
 		<div class="text-center">
 			<div class="underline" ng-repeat="letter in displayLetters track by $index">
-				<div ng-repeat="correctGuess in correctGuesses" ng-if="correctGuess === letter">
+				<div ng-repeat="correctGuess in correctGuesses track by $index" ng-if="correctGuess === letter">
 					{{correctGuess}}
 				</div>
 				<div class="answer"> 
 				</div>
 			</div>
 		</div>
+
+	
 
 		<svg width="400" height="550" id="hanger">
 
@@ -122,19 +124,20 @@
 				<button class="letter" ng-click="getLetter(alphabet)" ng-hide="showLetter">{{alphabet}}</button>				
 			</div>
 
+
 			<!-- Image to show lost, game over -->
-			<h2 ng-show="lost"><img src="../images/gameover.jpg" alt="game over"></h2>
+			<h3 ng-show="lost"><img src="../images/gameover.jpg" alt="game over">
+			<br>The answer was: {{secretWords.join("")}} ...</h3>
 
 			<!-- Image to show when winner, game over -->
 			<h2 ng-show="won">You've won!</h2>
 
 			<!-- Button trigger modal -->
-			<br><br><br><br><br><br><br><br><br><br><br><div class="text-center">
-				<button class="btn-lg btn-primary" data-toggle="modal" data-target="#myModal" ng-hide="buttonHide">
+			<div class="text-center">
+				<button class="btn-block btn-lg btn-primary" id="startButton" data-toggle="modal" data-target="#myModal" ng-hide="buttonHide">
 				  Game Set Up
 				</button>
 			</div>
-
 
 
 		</div>  <!-- right side end -->
@@ -144,15 +147,3 @@
 	</div> <!-- row ends -->
 
 </div>  <!-- container ends -->
-
-
-
-<!-- by $index -->
-<!-- for displaying letters -->
-
-<!-- modal upfront -->
-<!-- z index = 2; -->
-<!-- position: abosolute; -->
-
-<!-- if x of y
-console.log("test") -->

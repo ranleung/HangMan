@@ -35,28 +35,34 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 	$scope.showHintTwo = true
 	$scope.showButtonHintOne = true
 	$scope.showButtonHintTwo = true
+	$scope.reset = true
 
 	$scope.initalQuestion = ->
+		# Ask user for the question/description
 		$scope.questionHide = true
 		$scope.questions.push($scope.question)
 		$scope.hideQuestion = true
 		console.log("Brief Description", $scope.questions)
 
 	$scope.addWord = ->
+		# Add the word to the array
 		$scope.buttonHide = true
 		$scope.secretWords.push($scope.secretWord)
 		$scope.displayLetters = $scope.secretWords.join("")
 		$scope.playButton = false
 		console.log("Word is:", $scope.secretWords)
 		$scope.showLetter = false
+		$scope.reset = false
 
 	$scope.addHintOne = ->
+		# Let player1 add hint 1
 		$scope.hintOneHide = true
 		$scope.hintOnes.push($scope.hintOne)
 		$scope.showButtonHintOne = false
 		console.log("Hint One is:", $scope.hintOnes)
 
 	$scope.addHintTwo = ->
+		# Let player1 add hint 2
 		$scope.hintTwoHide = true
 		$scope.hintTwos.push($scope.hintTwo)
 		$scope.showButtonHintTwo = false
@@ -112,10 +118,9 @@ HangMan.controller "SitesCtrl", ["$scope", ($scope) ->
 				$scope.rightLeg = true
 				$scope.showLetter = true
 				$scope.lost = true
+				$scope.reset = false
 				console.log("You Lost")
 		$scope.letters = []
-
-
 
 ]
 
